@@ -126,13 +126,13 @@ def call(Map configMap){
                 }
             } */
             stage('Trigger Deploy') {
-                /* when{ 
+                when{ 
                     expression { parms.deploy }
-                } */
+                } 
                 steps {
                     script {
-                        build job: 'catalogue-cd', //1st this one and second below one 
-                        //build job: "../${COMPONENT}-cd",
+                        //build job: 'catalogue-cd', //1st this one and second below one 
+                        build job: "../${COMPONENT}-cd",
                         parameters: [
                             string(name: 'appVersion', value: "${appVersion}"),
                             string(name: 'deploy_to', value: 'dev')
