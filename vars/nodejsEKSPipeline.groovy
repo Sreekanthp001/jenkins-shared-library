@@ -127,7 +127,7 @@ def call(Map configMap){
             } */
             stage('Trigger Deploy') {
                 when{ 
-                    expression { parms.deploy }
+                    expression { params.deploy }
                 } 
                 steps {
                     script {
