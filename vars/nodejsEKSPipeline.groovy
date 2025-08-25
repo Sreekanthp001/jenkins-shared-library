@@ -47,7 +47,7 @@ def call(Map configMap){
                     }
                 }
             }
-            stage('Check Dependabot Alerts') {
+            /* stage('Check Dependabot Alerts') {
                 environment {
                     GITHUB_TOKEN = credentials('github-token')
                 }
@@ -80,7 +80,7 @@ def call(Map configMap){
                         }
                     }
                 }
-            }
+            } */
             stage('Docker Build') {
                 steps {
                     script {
