@@ -126,9 +126,9 @@ def call(Map configMap){
                 }
             } */
             stage('Trigger Deploy') {
-                when{ 
+                /* when{ 
                     expression { params.deploy }
-                } 
+                }  */
                 steps {
                     script {
                         //build job: 'catalogue-cd', //1st this one and second below one 
