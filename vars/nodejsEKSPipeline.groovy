@@ -4,6 +4,11 @@ def call(Map configMap){
             label 'AGENT-1'
         }
         environment {
+            appVersion = ''
+            REGION = "us-east-1"
+            ACC_ID = "632745187858"
+            PROJECT = configMap.get('project')
+            COMPONENT = configMap.get('component')
             
         }
         options {
