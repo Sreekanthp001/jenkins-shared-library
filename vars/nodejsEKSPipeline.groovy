@@ -89,6 +89,7 @@ def call(Map configMap){
                                 aws ecr get-login-password --region ${REGION} | docker login --username AWS --password-stdin ${ACC_ID}.dkr.ecr.us-east-1.amazonaws.com
                                 docker build -t ${ACC_ID}.dkr.ecr.us-east-1.amazonaws.com/${PROJECT}/${COMPONENT}:${appVersion} .
                                 docker push ${ACC_ID}.dkr.ecr.us-east-1.amazonaws.com/${PROJECT}/${COMPONENT}:${appVersion}
+
                             """
                         }
 
@@ -126,9 +127,9 @@ def call(Map configMap){
                 }
             } */
             stage('Trigger Deploy') {
-                /* when{ 
+                when{ 
                     expression { params.deploy }
-                }  */
+                }
                 steps {
                     script {
                         //build job: 'catalogue-cd', //1st this one and second below one 
