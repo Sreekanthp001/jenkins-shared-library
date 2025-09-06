@@ -31,7 +31,10 @@ def call(Map configMap){
                 steps {
                     script {
                     sh """
-                        mvn clean package 
+                        sudo yum update -y
+                        sudo yum install maven -y
+                        mvn clean package
+                        mvn -version 
                     """
                     }
                 }
