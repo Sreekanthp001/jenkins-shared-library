@@ -31,7 +31,6 @@ def call(Map configMap){
                 steps {
                     script {
                         sh """
-                            sudo yum install -y python3-devel gcc
                             pip3 install -r requirements.txt
                         """
                     }
